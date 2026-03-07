@@ -12,7 +12,7 @@ export default function DashboardLayout({children}: { children: ReactNode }) {
                 <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] p-4">
                     <Link href={`/`} className="flex items-center justify-center gap-2 lg:justify-start">
                         <Image src={`/logo.png`} alt={`logo`} width={32} height={32}/>
-                        <span className="hidden lg:block">School Lama</span>
+                        <span className="hidden lg:block font-bold">School Lama</span>
                     </Link>
                     <Menu/>
                 </div>
