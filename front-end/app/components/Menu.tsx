@@ -15,14 +15,14 @@ const menuItems = [
             },
             {
                 icon: "/teacher.png",
-                label: "Teacher",
-                href: "/teacher",
+                label: "Teachers",
+                href: "/list/teachers",
                 visible: ["admin", "teacher"],
             },
             {
                 icon: "/student.png",
-                label: "Student",
-                href: "/student",
+                label: "Students",
+                href: "/list/students",
                 visible: ["admin", "teacher"],
             },
             {
