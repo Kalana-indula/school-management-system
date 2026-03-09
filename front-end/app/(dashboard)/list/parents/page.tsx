@@ -5,6 +5,7 @@ import Pagination from "@/app/components/Pagination";
 import Table from "@/app/components/Table";
 import Link from "next/link";
 import {parentsData, role} from "@/lib/data";
+import FormModal from "@/app/components/FormModal";
 
 type Parent = {
     id: number;
@@ -56,15 +57,12 @@ const ParentsListPage = () => {
             <td className="hidden md:table-cell">{item.address}</td>
             <td>
                 <div className="flex items-center gap-2">
-                    <Link href={`/list/teachers/${item.id}`}>
-                        <button className="w-7 h-7 flex items-center justify-center rounded-full bg-myskyblue">
-                            <Image src={`/edit.png`} alt={``} width={16} height={16}/>
-                        </button>
-                    </Link>
+
                     {role === "admin" && (
-                        <button className="w-7 h-7 flex items-center justify-center rounded-full bg-mypurple">
-                            <Image src={`/delete.png`} alt={``} width={16} height={16}/>
-                        </button>
+                        <>
+                            <FormModal table={`parent`} type={`update`} data={item}/>
+                            <FormModal table={`parent`} type={`delete`} id={item.id}/>
+                        </>
                     )}
                 </div>
             </td>
@@ -85,9 +83,9 @@ const ParentsListPage = () => {
                         <button className="w-8 h-8 flex items-center justify-center rounded-full bg-mypeachyellow">
                             <Image src={`/sort.png`} alt={`sort`} width={14} height={14}/>
                         </button>
-                        {role === "admin" && (<button className="w-8 h-8 flex items-center justify-center rounded-full bg-mypeachyellow">
-                            <Image src={`/plus.png`} alt={`plus`} width={14} height={14}/>
-                        </button>)}
+                        {role === "admin" && (
+                            <FormModal table={`teacher`} type={`create`}/>
+                        )}
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import Pagination from "@/app/components/Pagination";
 import Table from "@/app/components/Table";
 import Link from "next/link";
 import {role, teachersData} from "@/lib/data";
+import FormModal from "@/app/components/FormModal";
 
 type Teacher = {
     id: number;
@@ -82,11 +83,13 @@ const TeachersListPage = () => {
                             <Image src={`/view.png`} alt={``} width={16} height={16}/>
                         </button>
                     </Link>
-                    {role === "admin" && (
-                        <button className="w-7 h-7 flex items-center justify-center rounded-full bg-mypurple">
-                            <Image src={`/delete.png`} alt={``} width={16} height={16}/>
-                        </button>
-                    )}
+                    {role === "admin" &&
+                        (
+                            // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-mypurple">
+                            //     <Image src={`/delete.png`} alt={``} width={16} height={16}/>
+                            // </button>
+                            <FormModal table={`teacher`} type={`delete`} id={item.id}/>
+                        )}
                 </div>
             </td>
         </tr>
@@ -106,9 +109,12 @@ const TeachersListPage = () => {
                         <button className="w-8 h-8 flex items-center justify-center rounded-full bg-mypeachyellow">
                             <Image src={`/sort.png`} alt={`sort`} width={14} height={14}/>
                         </button>
-                        {role === "admin" && (<button className="w-8 h-8 flex items-center justify-center rounded-full bg-mypeachyellow">
-                            <Image src={`/plus.png`} alt={`plus`} width={14} height={14}/>
-                        </button>)}
+                        {role === "admin" && (
+                            // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-mypeachyellow">
+                            //     <Image src={`/plus.png`} alt={`plus`} width={14} height={14}/>
+                            // </button>)}
+                            <FormModal table={`teacher`} type={`create`}/>
+                        )}
                     </div>
                 </div>
             </div>
