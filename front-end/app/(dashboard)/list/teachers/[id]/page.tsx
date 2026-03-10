@@ -25,26 +25,29 @@ const SingleTeacherPage = () => {
                             />
                         </div>
                         <div className="w-2/3 flex flex-col justify-between gap-4">
-                            <h1 className="text-xl font-semibold">
-                                Leonard Synder
-                            </h1>
-                            <FormModal
-                                table="teacher"
-                                type="update"
-                                data={{
-                                    id: 1,
-                                    username: "uname",
-                                    email: "email@example.com",
-                                    firstName: "Dean",
-                                    lastName: "Johns",
-                                    phone: "+1 232 534 321",
-                                    address: "1234 Main st, Anytown, USA",
-                                    bloodType: "A+",
-                                    dateOfBirth: "2000-01-01",
-                                    gender: "male",
-                                    img: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg",
-                                }}
-                            />
+
+                            <div className="flex items-center justify-center gap-4">
+                                <h1 className="text-xl font-semibold">
+                                    Leonard Synder
+                                </h1>
+                                <FormModal
+                                    table="teacher"
+                                    type="update"
+                                    data={{
+                                        id: 1,
+                                        username: "uname",
+                                        email: "email@example.com",
+                                        firstName: "Dean",
+                                        lastName: "Johns",
+                                        phone: "+1 232 534 321",
+                                        address: "1234 Main st, Anytown, USA",
+                                        bloodType: "A+",
+                                        birthday: new Date("2000-01-01"),
+                                        gender: "male",
+                                        img: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg",
+                                    }}
+                                />
+                            </div>
                             <p className="text-sm text-gray-500">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             </p>
