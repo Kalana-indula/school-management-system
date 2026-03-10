@@ -4,6 +4,7 @@ import BigCalendar from "@/app/components/BigCalendar";
 import Announcements from "@/app/components/Announcements";
 import Link from "next/link";
 import Performance from "@/app/components/Performance";
+import FormModal from "@/app/components/FormModal";
 
 const SingleTeacherPage = () => {
     return (
@@ -27,6 +28,23 @@ const SingleTeacherPage = () => {
                             <h1 className="text-xl font-semibold">
                                 Leonard Synder
                             </h1>
+                            <FormModal
+                                table="teacher"
+                                type="update"
+                                data={{
+                                    id: 1,
+                                    username: "uname",
+                                    email: "email@example.com",
+                                    firstName: "Dean",
+                                    lastName: "Johns",
+                                    phone: "+1 232 534 321",
+                                    address: "1234 Main st, Anytown, USA",
+                                    bloodType: "A+",
+                                    dateOfBirth: "2000-01-01",
+                                    gender: "male",
+                                    img: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg",
+                                }}
+                            />
                             <p className="text-sm text-gray-500">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             </p>
@@ -77,7 +95,7 @@ const SingleTeacherPage = () => {
                             />
                             <div className="">
                                 <h1 className="text-xl font-semibold">
-                                   3
+                                    3
                                 </h1>
                                 <span className="text-sm text-gray-400">Branches</span>
                             </div>
@@ -109,7 +127,7 @@ const SingleTeacherPage = () => {
                             />
                             <div className="">
                                 <h1 className="text-xl font-semibold">
-                                   5
+                                    5
                                 </h1>
                                 <span className="text-sm text-gray-400">Classes</span>
                             </div>
